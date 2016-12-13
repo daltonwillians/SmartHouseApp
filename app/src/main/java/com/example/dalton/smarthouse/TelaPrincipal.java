@@ -49,6 +49,7 @@ public class TelaPrincipal extends ActionBarActivity {
         alertDialog.setTitle("Ligar Ar");
         alertDialog.setMessage("Ar ligado!");
         alertDialog.show();
+
     }
 
     //Função de ação do botão TV;
