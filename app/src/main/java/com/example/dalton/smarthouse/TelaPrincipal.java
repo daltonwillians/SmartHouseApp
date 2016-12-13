@@ -12,6 +12,10 @@ import android.view.View;
 
 public class TelaPrincipal extends ActionBarActivity {
 
+    private AcessoRest acessoRest = new AcessoRest();
+    private String m = "";
+    private String wsLocal = "http://192.168.0.104:8084/MyNewHome/webresources/sensor?sensorId=";
+
     //Aqui eu chamo a activity tela principal
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +25,10 @@ public class TelaPrincipal extends ActionBarActivity {
     }
     //Função de ação do botão compra;
     public void actionButtonCompra (View view){
+        //------------------------------------------------
+        m = acessoRest.sendGet(wsLocal + 2);
+
+
         //Aqui vou mostrar uma mensagem mas deve ser chamado a URL
         AlertDialog alertDialog;
         alertDialog = new AlertDialog.Builder(this).create();
@@ -32,6 +40,9 @@ public class TelaPrincipal extends ActionBarActivity {
 
     //Função de ação do botão Ar;
     public void actionButtonAir (View view) {
+        //-----------------------------------------------
+        m = acessoRest.sendGet(wsLocal + 1);
+
         //Aqui vou mostrar uma mensagem mas deve ser chamado a URL
         AlertDialog alertDialog;
         alertDialog = new AlertDialog.Builder(this).create();
@@ -42,6 +53,9 @@ public class TelaPrincipal extends ActionBarActivity {
 
     //Função de ação do botão TV;
     public void actionButtonTV (View view) {
+        //------------------------------------------------
+        m = acessoRest.sendGet(wsLocal + 3);
+
         //Aqui vou mostrar uma mensagem mas deve ser chamado a URL
         AlertDialog alertDialog;
         alertDialog = new AlertDialog.Builder(this).create();

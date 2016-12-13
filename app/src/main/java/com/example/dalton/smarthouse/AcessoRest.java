@@ -21,12 +21,13 @@ import java.io.IOException;
  * Created by marcelosiedler on 09/03/15.
  */
 public class AcessoRest {
+
     private int  TIMEOUT_MILLISEC = 3000;
 
 
    // private String[] params;
 
-    public String exemploGet(String url)
+    public String sendGet(String url)
     {
 
 
@@ -37,9 +38,6 @@ public class AcessoRest {
         // Instantiate a GET HTTP method
         try {
 
-
-
-            //Aqui o ideal é colocar a requesição assíncrona
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
             StrictMode.setThreadPolicy(policy);
@@ -49,10 +47,6 @@ public class AcessoRest {
                     responseHandler);
 
             retorno = responseBody;
-
-
-
-
 
 
         } catch (ClientProtocolException e) {
